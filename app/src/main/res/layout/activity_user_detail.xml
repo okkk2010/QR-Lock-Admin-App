@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="60dp"
+    android:background="#FAFAFA">
+
+    <!-- 1) 헤더: 상세 내역 + 내 정보 버튼 -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="#B2DFDB"
+        android:paddingHorizontal="16dp">
+
+        <TextView
+            android:id="@+id/tvDetailTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="상세 내역"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_centerVertical="true" />
+
+        <Button
+            android:id="@+id/btnMyInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="내 정보"
+            android:textSize="14sp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true" />
+    </RelativeLayout>
+
+    <!-- 2) 기기 ID 영역 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="12dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="기기 ID: "
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvDeviceIdDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="QRLock458" />
+    </LinearLayout>
+
+    <!-- 3) 사용자 정보 테이블 헤더 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#EEEEEE"
+        android:paddingVertical="8dp"
+        android:paddingHorizontal="12dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="wrap_content"
+            android:text="이름"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="wrap_content"
+            android:text="특이사항"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_height="wrap_content"
+            android:text="권한 기간"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- 4) 사용자 정보 한 줄 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingHorizontal="12dp"
+        android:paddingVertical="8dp">
+
+        <TextView
+            android:id="@+id/tvDetailName"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="wrap_content"
+            android:text="홍길동" />
+
+        <TextView
+            android:id="@+id/tvDetailNote"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="wrap_content"
+            android:text="여행객" />
+
+        <TextView
+            android:id="@+id/tvDetailPeriod"
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_height="wrap_content"
+            android:text="2025.05.27 ~ 2025.05.30" />
+    </LinearLayout>
+
+    <!-- 5) 구분선 -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#CCCCCC"
+        android:layout_marginVertical="8dp" />
+
+    <!-- 6) 입장 코드 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingHorizontal="12dp"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="입장 코드: "
+            android:textStyle="bold" />
+
+        <ImageButton
+            android:id="@+id/btnCopyCode"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@android:drawable/ic_menu_sort_by_size"
+            android:contentDescription="코드 복사"
+            android:background="?attr/selectableItemBackgroundBorderless"/>
+            <!-- app:tint="#555"-->
+
+
+        <TextView
+            android:id="@+id/tvDetailCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="8dp"
+            android:text="fkeos49592fdkfla"
+            android:textIsSelectable="true"
+            android:typeface="monospace"/>
+    </LinearLayout>
+
+    <!-- 7) 다시 구분선 -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#CCCCCC"
+        android:layout_marginVertical="8dp"/>
+
+    <!-- 8) 출입 기록 헤더 -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="출입 기록"
+        android:textStyle="bold"
+        android:paddingHorizontal="12dp"
+        android:paddingBottom="4dp"/>
+
+    <!-- 9) 출입 기록 리스트 -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvAccessLog"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="12dp"/>
+</LinearLayout>
